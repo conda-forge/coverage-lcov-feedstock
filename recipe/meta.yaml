@@ -1,5 +1,5 @@
 {% set name = "coverage-lcov" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d65a77e4694c5dab041b2ba9725d819de12d8f26efc93f47bcd3dc25a74f017c
+  sha256: ca66692a12c686f337582209d338238a1aafa74149f134387555e719eac4e1e8
 
 build:
   noarch: python
