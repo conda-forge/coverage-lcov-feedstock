@@ -1,5 +1,5 @@
 {% set name = "coverage-lcov" %}
-{% set version = "0.2.5" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ca66692a12c686f337582209d338238a1aafa74149f134387555e719eac4e1e8
+  sha256: 0b352da0c72eacd555de2e10fa75ec165b8849ab6827218abc3ef6be2ec861f6
 
 build:
   noarch: python
@@ -19,12 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6.3
+    - python >=3.8
     - poetry-core >=1.0.0
   run:
-    - python >=3.6.3
-    - click <8.0.0,>=7.1.2
-    - coverage <6.0,>=5.5
+    - python >=3.8
+    - click >=7.1.2
+    - coverage >=7.0
     # the following toml dependencies should be provided by coverage but aren't
     - toml >=0.5
     - types-toml <0.2.0,>=0.1.5
