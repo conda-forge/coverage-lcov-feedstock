@@ -19,12 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6.3
+    - python >=3.8
     - poetry-core >=1.0.0
   run:
-    - python >=3.6.3
-    - click <8.0.0,>=7.1.2
-    - coverage <6.0,>=5.5
+    - python >=3.8
+    - click >=7.1.2
+    - coverage >=7.0
     # the following toml dependencies should be provided by coverage but aren't
     - toml >=0.5
     - types-toml <0.2.0,>=0.1.5
