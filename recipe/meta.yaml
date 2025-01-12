@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0b352da0c72eacd555de2e10fa75ec165b8849ab6827218abc3ef6be2ec861f6
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - coverage-lcov = coverage_lcov.cli:main
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - poetry-core >=1.0.0
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - click >=7.1.2
     - coverage >=7.0
     # the following toml dependencies should be provided by coverage but aren't
@@ -37,6 +37,7 @@ test:
     - coverage-lcov --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/TheCleric/coverage-lcov
